@@ -31,20 +31,23 @@ app.post("/", function (req, res) {
 		],
 	};
 
-	const url = "https://us21.api.mailchimp.com/3.0/lists/c6b7071a34";
+	const jsonData = JSON.stringify(data);
+
+	const url = "https://us21.api.mailchimp.com/3.0/lists/c6b7071a34"; // Define the URL here
 
 	const options = {
 		method: "POST",
 		auth: "Lickhill:2017dda2d3462f1fd1263ba3f3997750-us21",
+		headers: {
+			"Content-Type": "application/json",
+		},
 	};
-
-	const jsonData = JSON.stringify(data);
 
 	const request = https.request(url, options, function (response) {
 		if (response.statusCode === 200) {
-			res.sendFile(__dirname + "/success.html");
-		} else {
 			res.sendFile(__dirname + "/failure.html");
+		} else {
+			res.sendFile(__dirname + "/success.html");
 		}
 	});
 
@@ -56,6 +59,6 @@ app.post("/failure", function (req, res) {
 	res.redirect("/");
 });
 
-app.listen(4000, function () {
+app.listen(3000, function () {
 	console.log("server is running");
 });
