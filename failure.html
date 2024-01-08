@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>failureign up page</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+
+			body {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				margin: 0;
+				background-color: #000;
+			}
+
+			.cross-circle {
+				width: 100px;
+				height: 100px;
+				border-radius: 50%;
+				position: relative;
+				background-color: #000;
+			}
+
+			.cross {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(45deg);
+				width: 60px;
+				height: 2px;
+				background-color: #fff;
+			}
+
+			.cross::before,
+			.cross::after {
+				content: "";
+				position: absolute;
+				width: 60px;
+				height: 2px;
+				background-color: #fff;
+			}
+
+			.cross::before {
+				transform: rotate(90deg);
+			}
+
+			.cross::after {
+				transform: rotate(-90deg);
+			}
+
+			h1 {
+				font-family: "DotGothic16";
+				text-align: center;
+				font-size: 3rem;
+				color: #0a0000;
+			}
+
+			/* CSS */
+			.button-54 {
+				font-family: "Open Sans", sans-serif;
+				font-size: 16px;
+				letter-spacing: 2px;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #000;
+				cursor: pointer;
+				border: 3px solid;
+				padding: 0.25em 0.5em;
+				box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px,
+					4px 4px 0px 0px, 5px 5px 0px 0px;
+				position: relative;
+				user-select: none;
+				-webkit-user-select: none;
+				touch-action: manipulation;
+			}
+
+			.button-54:active {
+				box-shadow: 0px 0px 0px 0px;
+				top: 5px;
+				left: 5px;
+			}
+
+			@media (min-width: 768px) {
+				.button-54 {
+					padding: 0.25em 0.75em;
+				}
+			}
+		</style>
+	</head>
+	<body
+		style="
+			background: #020024;
+			background: linear-gradient(
+				90deg,
+				#24000b 0%,
+				#790927 37%,
+				#ff00b3 94%
+			);
+		"
+	>
+		<div class="cross-circle">
+			<div class="cross"></div>
+		</div>
+		<h1>signup failure</h1>
+		<form method="post" action="/failure">
+			<button class="button-54" type="submit">Try Again</button>
+		</form>
+	</body>
+</html>
